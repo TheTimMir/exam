@@ -38,6 +38,12 @@ class Person:
             raise DepressionException("No happiness left.")
 
     def do(self, action: Action):
+        if type(action) == Work:
+            if self.happiness > 90:
+                self.capital += 0.1 * action.capital
+        elif type(action) == Rest:
+            if self.health < 40:
+                self.health -= 0.2 * action.health
         self.capital += action.capital
         self.happiness += action.happiness
         self.health += action.health
