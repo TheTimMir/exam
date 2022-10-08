@@ -1,3 +1,6 @@
+from exceptions import *
+
+
 class Person:
     def __init__(self, name: str, health: int, happiness: int, capital: float):
         self.capital = capital
@@ -8,10 +11,10 @@ class Person:
     def change_status(self, dHealth=0, dHappiness=0, dCapital=0.0):
         self.capital += dCapital
         if self.capital < 0:
-            pass
+            raise BankruptException("No money left.")
         self.health += dHealth
         if self.health < 0:
-            pass
+            raise DeathException("No health left.")
         self.happiness += dHappiness
         if self.happiness < 0:
-            pass
+            raise DepressionException("No happiness left.")
