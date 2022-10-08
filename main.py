@@ -1,6 +1,14 @@
 from exceptions import *
 
 
+class Action:
+    def __init__(self, name: str, health: int, happiness: int, capital: float):
+        self.capital = capital
+        self.happiness = happiness
+        self.health = health
+        self.name = name
+
+
 class Person:
     def __init__(self, name: str, health: int, happiness: int, capital: float):
         self.capital = capital
@@ -28,12 +36,15 @@ class Person:
         return f"Name:{self.name}\nHealth:{self.health}\nHappiness:{self.happiness}\nCapital:{self.capital}"
 
 
-class Acton:
+class Work(Action):
     def __init__(self, name: str, health: int, happiness: int, capital: float):
-        self.capital = capital
-        self.happiness = happiness
-        self.health = health
-        self.name = name
+        super().__init__(name, health, happiness, capital)
 
-    def __str__(self):
-        return f"Name:{self.name}\nHealth:{self.health}\nHappiness:{self.happiness}\nCapital:{self.capital}"
+
+class Rest(Action):
+    def __init__(self, name: str, health: int, happiness: int, capital: float):
+        super().__init__(name, health, happiness, capital)
+
+
+
+
