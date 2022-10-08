@@ -19,6 +19,11 @@ class Person:
         if self.happiness < 0:
             raise DepressionException("No happiness left.")
 
+    def do(self, action: Action):
+        self.capital += action.capital
+        self.happiness += action.happiness
+        self.health += action.health
+
     def __str__(self):
         return f"Name:{self.name}\nHealth:{self.health}\nHappiness:{self.happiness}\nCapital:{self.capital}"
 
