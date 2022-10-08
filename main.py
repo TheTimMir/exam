@@ -18,3 +18,8 @@ class Person:
         self.happiness += dHappiness
         if self.happiness < 0:
             raise DepressionException("No happiness left.")
+
+    def __str__(self):
+        return f"Name:{self.name}\nHealth:{self.health}\nHappiness:{self.happiness}\nCapital:{self.capital}"
+
+
