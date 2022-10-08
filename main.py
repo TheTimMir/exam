@@ -23,3 +23,12 @@ class Person:
         return f"Name:{self.name}\nHealth:{self.health}\nHappiness:{self.happiness}\nCapital:{self.capital}"
 
 
+class Acton:
+    def __init__(self, name: str, health: int, happiness: int, capital: float):
+        self.capital = capital
+        self.happiness = happiness
+        self.health = health
+        self.name = name
+
+    def __str__(self):
+        return f"Name:{self.name}\nHealth:{self.health}\nHappiness:{self.happiness}\nCapital:{self.capital}"
