@@ -40,13 +40,11 @@ class Person:
     def do(self, action: Action):
         if type(action) == Work:
             if self.happiness > 90:
-                self.capital += 0.1 * action.capital
+                self.change_status(0, 0, 0.1 * action.capital)
         elif type(action) == Rest:
             if self.health < 40:
-                self.health -= 0.2 * action.health
-        self.capital += action.capital
-        self.happiness += action.happiness
-        self.health += action.health
+                self.change_status(int(0.2 * action.health), 0, 0)
+        self.change_status(action.health, action.happiness, action.capital)
 
     def __str__(self):
         return f"Name:{self.name}\nHealth:{self.health}\nHappiness:{self.happiness}\nCapital:{self.capital}"
