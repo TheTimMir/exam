@@ -9,6 +9,16 @@ class Action:
         self.name = name
 
 
+class Work(Action):
+    def __init__(self, name: str, health: int, happiness: int, capital: float):
+        super().__init__(name, health, happiness, capital)
+
+
+class Rest(Action):
+    def __init__(self, name: str, health: int, happiness: int, capital: float):
+        super().__init__(name, health, happiness, capital)
+
+
 class Person:
     def __init__(self, name: str, health: int, happiness: int, capital: float):
         self.capital = capital
@@ -34,17 +44,5 @@ class Person:
 
     def __str__(self):
         return f"Name:{self.name}\nHealth:{self.health}\nHappiness:{self.happiness}\nCapital:{self.capital}"
-
-
-class Work(Action):
-    def __init__(self, name: str, health: int, happiness: int, capital: float):
-        super().__init__(name, health, happiness, capital)
-
-
-class Rest(Action):
-    def __init__(self, name: str, health: int, happiness: int, capital: float):
-        super().__init__(name, health, happiness, capital)
-
-
 
 
